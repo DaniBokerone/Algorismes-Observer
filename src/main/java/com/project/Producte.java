@@ -21,14 +21,14 @@ public class Producte {
     public void setId(int id) {
         int oldId = this.id;
         this.id = id;
-        support.firePropertyChange("idProducte", oldId, id);
+        support.firePropertyChange("producteId", oldId, id);
 
     }
 
     public void setNom(String nom) {
         String oldName = this.nom;
         this.nom = nom;
-        support.firePropertyChange("nomProducte", oldName, nom);
+        support.firePropertyChange("producteName", oldName, nom);
     }
 
     //Getters

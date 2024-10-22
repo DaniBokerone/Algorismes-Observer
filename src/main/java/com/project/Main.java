@@ -14,11 +14,22 @@ public class Main {
         Magatzem magatzem = new Magatzem(entregues);
  
         // Aquí afegir els property listeners adequats
-        p0.addPropertyChangeListener(evt -> 
-        System.out.println("Producte ha canviat el nom de '" + evt.getOldValue() + "' a '" + evt.getNewValue()+"'"));
+        p0.addPropertyChangeListener(evt -> {
+            if ("producteName".equals(evt.getPropertyName())) {
+                System.out.println("Producte ha canviat el nom de '" + evt.getOldValue() + "' a '" + evt.getNewValue() + "'");
+            } else if ("producteId".equals(evt.getPropertyName())) {
+                System.out.println("Producte ha canviat el id de '" + evt.getOldValue() + "' a '" + evt.getNewValue() + "'");
+            }
+        });
 
-        p1.addPropertyChangeListener(evt -> 
-        System.out.println("Producte ha canviat el nom de '" + evt.getOldValue() + "'' a '" + evt.getNewValue()+"'" ));
+        p1.addPropertyChangeListener(evt -> {
+            if ("producteName".equals(evt.getPropertyName())) {
+                System.out.println("Producte ha canviat el nom de '" + evt.getOldValue() + "' a '" + evt.getNewValue() + "'");
+            } else if ("producteId".equals(evt.getPropertyName())) {
+                System.out.println("Producte ha canviat el id de '" + evt.getOldValue() + "' a '" + evt.getNewValue() + "'");
+            } 
+        });
+
 
         magatzem.addPropertyChangeListener(evt -> {
             if ("magatzemAdd".equals(evt.getPropertyName())) {
